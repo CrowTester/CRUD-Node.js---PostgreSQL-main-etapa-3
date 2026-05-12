@@ -9,5 +9,5 @@ CREATE TABLE IF NOT EXISTS pedidos (
   produto VARCHAR(255) NOT NULL,
   valor NUMERIC(10,2) NOT NULL,
   status VARCHAR(50) DEFAULT 'pendente',
-  cliente_id INTEGER REFERENCES clientes(id)
+  cliente_id INTEGER REFERENCES clientes(id) on delete cascade
 );
