@@ -276,6 +276,24 @@ app.put('/pedidos/:id', async (req, res) => {
   }
 });
 
+app.delete('/pedidos/:id', async (req, res) => {
+  const { id } = req.params;
+  const pedidoId = parsePositiveInteger(id);
+  if (!pedidoId) {
+    return res.status(400).json({ erro: 'ID de pedido inválido' });
+  }
+  try {
+    const resultado = await pool.query('DELETE FROM pedidos WHERE id = $1 RETURNING *', [pedidoId]);
+    if (resultado.rows.length === 0) {
+      return res.status(404).json({ erro: 'Pedido não encontrado' });
+    }
+    return res.json({ mensagem: 'Pedido removido com sucesso' });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ erro: 'Erro ao deletar pedido' });
+  }
+});
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
