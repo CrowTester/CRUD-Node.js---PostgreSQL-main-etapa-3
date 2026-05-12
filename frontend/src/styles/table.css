@@ -1,0 +1,117 @@
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: #F7F7FF;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(39, 24, 126, 0.1);
+}
+
+.tabela thead {
+  background: #27187E;
+  color: #F7F7FF;
+}
+
+.tabela th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.tabela td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.tabela tbody tr:hover {
+  background-color: rgba(39, 24, 126, 0.05);
+}
+
+.tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-editar {
+  background-color: #27187E;
+  color: #F7F7FF;
+  padding: 8px 15px;
+  font-size: 12px;
+}
+
+.btn-editar:hover {
+  background-color: #1a0f5c;
+}
+
+.btn-deletar {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 8px 15px;
+  font-size: 12px;
+}
+
+.btn-deletar:hover {
+  background-color: #e63946;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vazio {
+  text-align: center;
+  padding: 40px;
+  background: #F7F7FF;
+  border-radius: 8px;
+  color: #27187E;
+  font-size: 16px;
+}
+
+.carregando {
+  text-align: center;
+  padding: 40px;
+  background: #F7F7FF;
+  border-radius: 8px;
+  color: #27187E;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .tabela {
+    font-size: 12px;
+  }
+
+  .tabela th,
+  .tabela td {
+    padding: 10px;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+
+  .btn-editar,
+  .btn-deletar {
+    width: 100%;
+  }
+}

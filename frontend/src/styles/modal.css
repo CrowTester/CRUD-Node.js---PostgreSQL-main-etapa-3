@@ -1,0 +1,89 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.modal p {
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-confirmar {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+.btn-confirmar:hover {
+  background-color: #e63946;
+}
+
+.btn-cancelar {
+  background-color: #ccc;
+  color: #333;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+.btn-cancelar:hover {
+  background-color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    max-width: 90%;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  .btn-confirmar,
+  .btn-cancelar {
+    width: 100%;
+  }
+}

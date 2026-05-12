@@ -1,0 +1,41 @@
+.filtro-container {
+  background: #F7F7FF;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(39, 24, 126, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filtro-container label {
+  font-weight: 600;
+  color: #27187E;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.filtro-container select {
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+.filtro-container select:focus {
+  border-color: #27187E;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .filtro-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-container select {
+    width: 100%;
+  }
+}
